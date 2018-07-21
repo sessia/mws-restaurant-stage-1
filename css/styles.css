@@ -150,7 +150,6 @@ nav h1 a {
   margin: 0;
   padding: 30px 0px 60px;
   text-align: center;
-	order: 2;
 	width: 100%;
 }
 #restaurants-list li {
@@ -170,7 +169,6 @@ nav h1 a {
 	margin-top: 20px;
   max-width: 100%;
   min-height: 248px;
-  min-width: 100%;
 }
 #restaurants-list li h1 {
   color: #f18200;
@@ -292,120 +290,7 @@ nav h1 a {
   color: #666;
 }
 
-/* ====================== MEDIA QUERIES ====================== */
-@media screen and (min-width: 549px) {
-  footer {
-    font-size: 1.0em;
-  }
-  /* ====================== Header ====================== */
-  #breadcrumb li {
-    font-size: 0.8em;
-  }
-  /* ====================== Restaurant Filtering ====================== */
-  .filter-options h2 {
-    font-size: 1.8em;
-  }
-  .filter-options select {
-    font-size: 1.5em;
-  }
-  /* ====================== Restaurant Detail ====================== */
-  #restaurant-name,
-  #restaurant-address {
-    font-size: 1.6em;
-  }
-  #restaurant-cuisine,
-  #restaurant-hours {
-    font-size: 1.4em;
-  }
-  #restaurant-hours td:last-of-type {
-    text-align: right;
-  }
-  /* ====================== Restaurant List ====================== */
-  #restaurants-list li h2 {
-    font-size: 1.8em;
-  }
-  #restaurants-list li p {
-    font-size: 1.4em;
-  }
-  #restaurants-list li a {
-    font-size: 1.2em;
-  }
-}
-@media screen and (min-width: 749px) {
-  #result-container {
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
-
-  /* This fixes alignment problems, when the restaurant content is split onto a several lines. */
-  #restaurants-list li h2,
-  #restaurants-list li p {
-    min-height: 62px;
-    font-size: 1.5em;
-  }
-	/*
-  #restaurants-list li {
-    margin: 10px 20px;
-    display: inline-block;
-    max-width: 300px;
-  }*/
-  #restaurant-address {
-    padding: 20px 100px 0;
-    font-size: 1.6em;
-  }
-  #restaurant-hours {
-    padding: 20px 100px;
-  }
-  #restaurant-hours td:first-of-type {
-    padding: 0;
-  }
-}
-
-@media screen and (min-width: 959px) {
-  #result-container {
-    max-width: 960px;
-    margin: 0 auto;
-  }
-  /* ====================== Restaurant Detail ====================== */
-  #restaurant-name {
-    font-size: 1.8em;
-  }
-  #restaurant-cuisine {
-    font-size: 1.6em;
-  }
-  /* ====================== Reviews List ====================== */
-
-  #reviews-list li p.reviewer-date {
-    text-align: center;
-  }
-  #reviews-list li p.date {
-    float: none;
-    color: #fff;
-    font-size: 1.4em;
-    width: inherit;
-  }
-  #reviews-list li p.date::before {
-    content: '-';
-    margin: 0 10px 0;
-  }
-  #reviews-list li p.rating {
-    max-width: 200px;
-  }
-  #reviews-list li p.comments {
-    font-size: 1.5em;
-  }
-}
-
-
-
-@media screen and (min-width: 531px) and (max-width: 836px) {
-	.filter-options select {
-	  margin: 10px;
-		margin-left: 30px;
-		padding: 0 10px;
-	  width: 40%;
-	}
-}
+/* ====================== Media queries ====================== */
 
 @media screen and (max-width: 530px) {
 	.filter-options select {
@@ -414,7 +299,14 @@ nav h1 a {
 	  width: 90%;
 	}
 }
-
+@media screen and (min-width: 531px) and (max-width: 836px) {
+	.filter-options select {
+	  margin: 10px;
+		margin-left: 30px;
+		padding: 0 10px;
+	  width: 40%;
+	}
+}
 @media screen and (min-width: 837px) {
 	.filter-options select {
 		margin: 10px;
@@ -428,4 +320,48 @@ nav h1 a {
 	#restaurants-list li {
 	  max-width: 310px;
 	}
+}
+
+@media screen and (max-width: 875px) {
+	#breadcrumb {
+	    padding: 10px 50px 16px;
+	    width: 100%;
+	}
+	.inside #map-container {
+		height: 250px;
+		position: relative;
+		top: 130px;
+		width: 100%;
+		display: inline-block;
+	}
+	#restaurant-img {
+		width: 100%;
+	}
+	#restaurant-cuisine{
+		width: 100%;
+	}
+	#restaurant-address {
+    text-align: center;
+	}
+	#restaurant-hours {
+		padding-left: 50px;
+	}
+	#restaurant-container {
+	  padding: 140px 0 30px;
+	  width: 100%;
+	}
+	#reviews-container {
+	  padding-top: 20px;
+	  width: 90%;
+	}
+	#reviews-list{
+		width: 100%;
+	}
+	#reviews-list li {
+    width: 85%;
+	}
+	#restaurant-name {
+		padding-left: 20px;
+	}
+
 }
