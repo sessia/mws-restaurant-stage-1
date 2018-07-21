@@ -189,7 +189,7 @@ fillBreadcrumb = (restaurant=self.restaurant) => {
   const breadcrumb = document.getElementById('breadcrumb');
   const breadcrumbLi = breadcrumb.querySelectorAll('li');
 
-  for (element of breadcrumLi) {
+  for (element of breadcrumbLi) {
     element.removeAttribute('aria-current');
   }
 
