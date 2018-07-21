@@ -4,6 +4,19 @@ let restaurants,
 var newMap
 var markers = []
 
+const imgsAlts = {
+	1: "People having dinner in a restaurant.",
+	2: "Pizza margherita.",
+	3: "Empty oriental restaurant.",
+	4: "Outside of the restaurant Katz's delicatess.",
+	5: "People eatin at a restaurant and staff preparing food.",
+	6: "People eating at a restaurant with wooden tables and chairs.",
+	7: "Outside of the Superiority Burger restaurant.",
+	8: "Outside of the Dutch restaurant.",
+	9: "People eating with chopsticks.",
+	10: "Modern empy restaurant."
+};
+
 /**
  * Fetch neighborhoods and cuisines as soon as the page is loaded.
  */
@@ -157,10 +170,12 @@ fillRestaurantsHTML = (restaurants = self.restaurants) => {
  */
 createRestaurantHTML = (restaurant) => {
   const li = document.createElement('li');
+  li.tabIndex = '0';
 
   const image = document.createElement('img');
   image.className = 'restaurant-img';
   image.src = DBHelper.imageUrlForRestaurant(restaurant);
+  image.alt = imgsAlts[restaurant.id];
   li.append(image);
 
   const name = document.createElement('h1');
