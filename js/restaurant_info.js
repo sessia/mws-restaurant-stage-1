@@ -1,6 +1,19 @@
 let restaurant;
 var newMap;
 
+const imgsAlts = {
+	1: "People having dinner in a restaurant.",
+	2: "Pizza margherita.",
+	3: "Empty oriental restaurant.",
+	4: "Outside of the restaurant Katz's delicatess.",
+	5: "People eatin at a restaurant and staff preparing food.",
+	6: "People eating at a restaurant with wooden tables and chairs.",
+	7: "Outside of the Superiority Burger restaurant.",
+	8: "Outside of the Dutch restaurant.",
+	9: "People eating with chopsticks.",
+	10: "Modern empy restaurant."
+};
+
 /**
  * Initialize map as soon as the page is loaded.
  */
@@ -89,6 +102,7 @@ fillRestaurantHTML = (restaurant = self.restaurant) => {
   const image = document.getElementById('restaurant-img');
   image.className = 'restaurant-img'
   image.src = DBHelper.imageUrlForRestaurant(restaurant);
+  image.alt = imgsAlts[restaurant.id];
 
   const cuisine = document.getElementById('restaurant-cuisine');
   cuisine.innerHTML = restaurant.cuisine_type;
@@ -128,6 +142,7 @@ fillReviewsHTML = (reviews = self.restaurant.reviews) => {
   const container = document.getElementById('reviews-container');
   const title = document.createElement('h2');
   title.innerHTML = 'Reviews';
+  title.tabIndex = '0';
   container.appendChild(title);
 
   if (!reviews) {
@@ -172,8 +187,15 @@ createReviewHTML = (review) => {
  */
 fillBreadcrumb = (restaurant=self.restaurant) => {
   const breadcrumb = document.getElementById('breadcrumb');
+  const breadcrumbLi = breadcrumb.querySelectorAll('li');
+
+  for (element of breadcrumLi) {
+    element.removeAttribute('aria-current');
+  }
+
   const li = document.createElement('li');
   li.innerHTML = restaurant.name;
+  li.setAttribute('aria-current', 'page');
   breadcrumb.appendChild(li);
 }
 
