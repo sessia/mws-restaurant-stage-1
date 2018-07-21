@@ -55,7 +55,6 @@ article, aside, canvas, details, figcaption, figure, footer, header, hgroup, men
 	order: 1;
 	width:100%;
 }
-
 header {
 	width: 100%;
 	order: 0;
@@ -86,25 +85,21 @@ nav h1 a {
     margin: 0;
     width: calc(50% - 80px);
 }
-
 /* Display list items side by side */
 #breadcrumb li {
     display: inline;
 }
-
 /* Add a slash symbol (/) before/behind each list item */
 #breadcrumb li+li:before {
     padding: 8px;
     color: black;
     content: "/\00a0";
 }
-
 /* Add a color to all links inside the list */
 #breadcrumb li a {
     color: #0275d8;
     text-decoration: none;
 }
-
 /* Add a color on mouse-over */
 #breadcrumb li a:hover {
     color: #01447e;
@@ -112,9 +107,9 @@ nav h1 a {
 }
 /* ====================== Map ====================== */
 #map {
-  height: 400px;
-  background-color: #ccc;
-	order: 2;
+	  height: 400px;
+	  background-color: #ccc;
+		order: 2;
 }
 /* ====================== Restaurant Filtering ====================== */
 .filter-options {
@@ -142,7 +137,6 @@ nav h1 a {
   height: 35px;
   letter-spacing: 0;
 }
-
 /* ====================== Restaurant Listing ====================== */
 #restaurants-list {
   background-color: #f3f3f3;
@@ -196,7 +190,6 @@ nav h1 a {
   text-decoration: none;
   text-transform: uppercase;
 }
-
 /* ====================== Restaurant Details ====================== */
 .inside header {
   position: fixed;
@@ -289,9 +282,7 @@ nav h1 a {
 #restaurant-hours td {
   color: #666;
 }
-
 /* ====================== Media queries ====================== */
-
 @media screen and (max-width: 530px) {
 	.filter-options select {
 		margin: 15px 20px 15px;
@@ -315,13 +306,11 @@ nav h1 a {
 		width: 45%;
 	}
 }
-
 @media screen and (min-width: 808px) {
 	#restaurants-list li {
 	  max-width: 310px;
 	}
 }
-
 @media screen and (max-width: 875px) {
 	#breadcrumb {
 	    padding: 10px 50px 16px;
@@ -363,5 +352,4 @@ nav h1 a {
 	#restaurant-name {
 		padding-left: 20px;
 	}
-
 }

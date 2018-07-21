@@ -1,4 +1,4 @@
-const cacheName = 'restaurant-app-project-v9';
+const cacheName = 'restaurant-app-project-v1';
 const urlsToCache = [
   '/',
   './index.html',
@@ -23,28 +23,34 @@ const urlsToCache = [
 
 self.addEventListener('install', function(event) {
   console.log("[ServiceWorker] Installed")
+
   event.waitUntil(
       caches.open(cacheName)
       .then(function(cache) {
         console.log('adding caches to ' + cacheName);
         return cache.addAll(urlsToCache);
-      }).catch(function(err) {
+      })
+      .catch(function(err) {
         console.log(err);
       })
     );
 });
 
+
 self.addEventListener('activate', function(event) {
   console.log("[ServiceWorker] Activated")
 
-  event.waitUntil(caches.keys().then(function(cacheNames){
-    return Promise.all(cacheNames.map(function(thisCacheName){
-      if (thisCacheName !== cacheName) {
-        console.log("Removing cache from", thisCacheName)
-        return caches.delete(thisCacheName);
-      }
-    }))
-  }))
+  event.waitUntil(
+    caches.keys()
+    .then(function(cacheNames){
+      return Promise.all(cacheNames.map(function(thisCacheName){
+        if (thisCacheName !== cacheName) {
+          console.log("Removing cache from", thisCacheName)
+          return caches.delete(thisCacheName);
+          }
+        }))
+      }))
+
   event.waitUntil(self.clients.claim());
 });
 
